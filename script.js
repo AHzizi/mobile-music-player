@@ -1,4 +1,4 @@
-var audioEl = document.getElementById("audioEl");
+const audioEl = document.getElementById("audioEl");
 
         function showSideMenu() {
             $("#homeScreen").animate({
@@ -70,15 +70,15 @@ var audioEl = document.getElementById("audioEl");
 
         }
 
-        $("#closeSideMenu").on("click", function(){
+        $("#closeSideMenu").on("click", () => {
             hideSideMenu();
         });
 
-        $("#showSideMenu").on("click", function(){
+        $("#showSideMenu").on("click", () => {
             showSideMenu();
         });
 
-        $("#switchMode").on("click", function() {
+        $("#switchMode").on("click", () => {
             let modeStatus = $("#modeStatus").attr("name");
             
             if (modeStatus === "light") {
@@ -106,13 +106,13 @@ var audioEl = document.getElementById("audioEl");
         
         
 
-        $(".closeSM").on("click", function(){
+        $(".closeSM").on("click", () => {
             hideSideMenu();
         });
 
         // Music Player Here
 
-        $("#goBackToHome").on("click", function(){
+        $("#goBackToHome").on("click", () => {
             try {
                 showHome();
                 pauseAudio();
@@ -176,30 +176,30 @@ var audioEl = document.getElementById("audioEl");
             $("#heartUncheck").removeClass("hidden");
         }
 
-        $("#heartUncheck").on("click", function(){
+        $("#heartUncheck").on("click", () => {
             checkHeart();
         });
 
-        $("#heartCheck").on("click", function(){
+        $("#heartCheck").on("click", () => {
             uncheckHeart();
         });
 
         // Handle Audio
 
         var audioStatus = false;
-        var audioStatus2 = false;
-        var loopStatus = "loopOff";
-        var repeatStatus = "repeatOff";
+        const audioStatus2 = false;
+        let loopStatus = "loopOff";
+        let repeatStatus = "repeatOff";
 
-        $("#audioPlay").on("click", function(){
+        $("#audioPlay").on("click", () => {
             handleAudio();
         });
 
-        $("#audioPause").on("click", function(){
+        $("#audioPause").on("click", () => {
             handleAudio();
         });
 
-        $("#audioLoop").on("click", function(){
+        $("#audioLoop").on("click", () => {
             loopStatus = $("#loopStatus").attr("name");
             if(loopStatus == "loopOff"){
                 $("#audioLoop").addClass("check-bottom-opt");
@@ -212,7 +212,7 @@ var audioEl = document.getElementById("audioEl");
             }
         });
 
-        $("#audioRepeat").on("click", function(){
+        $("#audioRepeat").on("click", () => {
             repeatStatus = $("#repeatStatus").attr("name");
             if(repeatStatus == "repeatOff"){
                 $("#audioRepeat").addClass("check-bottom-opt");
@@ -225,7 +225,7 @@ var audioEl = document.getElementById("audioEl");
             }
         });
 
-        $("#musicImage").on("click", function(){
+        $("#musicImage").on("click", () => {
             
             if(audioEl.paused && audioEl.currentTime > 0 && !audioEl.ended) {
                 $("#audioPlay2").click();
@@ -278,14 +278,14 @@ var audioEl = document.getElementById("audioEl");
 
         }
 
-        $("#audioPlay2").on("click", function(){
+        $("#audioPlay2").on("click", () => {
             audioEl.play();
             $("#audioPlay2").addClass("hidden");
             $("#audioPause2").removeClass("hidden");
 
         });
 
-        $("#audioPause2").on("click", function(){
+        $("#audioPause2").on("click", () => {
             pauseAudio();
             $("#audioPlay2").removeClass("hidden");
             $("#audioPause2").addClass("hidden");
@@ -293,23 +293,23 @@ var audioEl = document.getElementById("audioEl");
 
         // playMusic({songImage: '', songName: '', songArtist: '', songID: ''});
 
-        function playMusic(arg) {
+        function playMusic({songImage, songName, songArtist, songID}) {
 
             $("#hideOnMusic").addClass("invisible");
 
             $("#musicImage").css(
-                "background", "url(" + arg.songImage + ")",
+                "background", `url(${songImage})`,
                 "background-position", "center",
                 "background-repeat", "no-repeat",
                 "background-size", "cover"
             );
 
-            $("#musicName").text(arg.songName);
-            $("#songName2").text(arg.songName);
+            $("#musicName").text(songName);
+            $("#songName2").text(songName);
             $("#songName2").removeClass("invisible");
-            $("#musicArtist").text(arg.songArtist);
+            $("#musicArtist").text(songArtist);
 
-            $("#audioElSource").attr("src", arg.songID);
+            $("#audioElSource").attr("src", songID);
             document.getElementById("audioEl").load();
 
             showMusic();
@@ -318,16 +318,16 @@ var audioEl = document.getElementById("audioEl");
 
             $("#musicImage").animate({
                 opacity: 0.2
-            }, 600, function(){
+            }, 600, () => {
                 $("#musicImage").animate({
                     opacity: 1
-                }, 600, function(){
+                }, 600, () => {
                     $("#musicImage").animate({
                         opacity: 0.2
-                    }, 600, function(){
+                    }, 600, () => {
                         $("#musicImage").animate({
                             opacity: 1
-                        }, 600 , function(){
+                        }, 600 , () => {
                             // $("#musicImage").animate({
                             //     opacity: 0.2
                             // }, 600 , function(){
