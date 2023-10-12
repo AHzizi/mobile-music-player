@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
-    <link id="lightCss" rel="stylesheet" href="styles.css" media="">
-    <link id="darkCss" rel="stylesheet" href="darkStyles.css" media="max-width=1px">
+    <link id="lightCss" rel="stylesheet" href="./styles/styles.css" media="">
+    <link id="darkCss" rel="stylesheet" href="./styles/darkStyles.css" media="max-width=1px">
     <!-- Overwriting styles bcuz of laziness -_- -->
     <style>
         .home-heading-2{
@@ -76,8 +76,68 @@
         </div>
 
         <div id="hideOnMusic" class="flex h-SCROLL">
-
-            <div class="home-card-1" onclick="playMusic({songImage: 'https:\/\/s.yimg.com/ny/api/res/1.2/mI4rBxEF5Z0kiLUURrH3VQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https:\/\/media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/c8fff8c0-3d09-11ea-b7ff-0f2094a2854d', songName: 'Gurenge', songArtist: 'LiSA', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754151/Gurenge_ykirrv.mp3'});">
+          
+            <!-- Card Music -->
+            <article class="home-card-1" onclick="playMusic({songImage: `https://res.cloudinary.com/dvdola2py/image/upload/v1697090767/cld-sample-5.jpg`, songName: 'Gurenge', songArtist: 'LiSA', songID: 'https://res.cloudinary.com/dvdola2py/video/upload/v1697091102/WhosReadyforTomorrow_ij1zsc.mp3'});">
+                <div class="flex home-c--1">
+                  <div class="home-c-1">
+                    <img class="home-c-1-img" src="https://res.cloudinary.com/dvdola2py/image/upload/v1697090767/cld-sample-5.jpg" alt="Album cover for Gurenge">
+                  </div>
+                  <div class="flex home-c-2">
+                    <div class="home-c-2-1">
+                      <h1>Gurenge</h1>
+                    </div>
+                    <div class="home-c-2-2">
+                      <p>LiSA</p>
+                    </div>
+                    <div class="home-c-2-3">
+                      <time>1:29</time>
+                    </div>
+                  </div>
+                  <div class="home-c-3">
+                    <div class="home-c-2-s-I-c">
+                        <ion-icon name="play" class="home-c--2-ICON"></ion-icon>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="flex home-c--2">
+                  <div class="flex home-c-2--stats-c">
+                    <div class="home-c-2-s-I-c">
+                      <ion-icon name="play" class="home-c--2-ICON"></ion-icon>
+                    </div>
+                    <div class="home-c-2-S-VAL">
+                      18M
+                    </div>
+                  </div>
+                  <div class="flex home-c-2--stats-c">
+                    <div class="home-c-2-s-I-c">
+                      <ion-icon name="heart" class="home-c--2-ICON"></ion-icon>
+                    </div>
+                    <div class="home-c-2-S-VAL">
+                      564K
+                    </div>
+                  </div>
+                  <div class="flex home-c-2--stats-c">
+                    <div class="home-c-2-s-I-c">
+                      <ion-icon name="download" class="home-c--2-ICON"></ion-icon>
+                    </div>
+                    <div class="home-c-2-S-VAL">
+                      12.2K
+                    </div>
+                  </div>
+                  <div class="flex home-c-2--stats-c">
+                    <div class="home-c-2-s-I-c">
+                      <ion-icon name="arrow-redo" class="home-c--2-ICON"></ion-icon>
+                    </div>
+                    <div class="home-c-2-S-VAL">
+                      16K
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+            <!-- <div class="home-card-1" onclick="playMusic({songImage: 'https:\/\/s.yimg.com/ny/api/res/1.2/mI4rBxEF5Z0kiLUURrH3VQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https:\/\/media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/c8fff8c0-3d09-11ea-b7ff-0f2094a2854d', songName: 'Gurenge', songArtist: 'LiSA', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754151/Gurenge_ykirrv.mp3'});">
                 <div class="flex home-c--1">
                     <div class="home-c-1">
                         <img class="home-c-1-img" src="https://s.yimg.com/ny/api/res/1.2/mI4rBxEF5Z0kiLUURrH3VQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/c8fff8c0-3d09-11ea-b7ff-0f2094a2854d">
@@ -131,7 +191,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="home-card-2" onclick="playMusic({songImage: 'https:\/\/i1.sndcdn.com/artworks-000558667800-97icts-t500x500.jpg', songName: 'That\'s Why I Gave Up On Music', songArtist: 'yoshurika', songID: 'https:\/\/res.cloudinary.com/dp1xkuswt/video/upload/v1598754173/%E3%83%A8%E3%83%AB%E3%82%B7%E3%82%AB_-_%E3%81%A0%E3%81%8B%E3%82%89%E5%83%95%E3%81%AF%E9%9F%B3%E6%A5%BD%E3%82%92%E8%BE%9E%E3%82%81%E3%81%9F_Music_Video_afaeot.mp3'});">
                 <div class="flex home-c--1">
@@ -543,9 +603,9 @@
                 </div>
             </div>
 
-            <div class="flex sec-4-box" onclick="playMusic({songImage: './img/WhosReadyforTomorrow.jpg', songName: 'Who\'s Ready For Tomorrow', songArtist: 'Rat Boy & IBDY', songID: './music/WhosReadyforTomorrow.mp3'});">
+            <div class="flex sec-4-box" onclick="playMusic({songImage: `https://res.cloudinary.com/dvdola2py/image/upload/v1697090767/cld-sample-5.jpg`, songName: 'Who\'s Ready For Tomorrow', songArtist: 'Rat Boy & IBDY', songID: `https://res.cloudinary.com/dvdola2py/video/upload/v1697091102/WhosReadyforTomorrow_ij1zsc.mp3`});">
                 <div class="sec-3--1">
-                    <img class="section-3-image" src="./img/WhosReadyforTomorrow.jpg">
+                    <img class="section-3-image" src="https://res.cloudinary.com/dvdola2py/image/upload/v1697090767/cld-sample-5.jpg">
                 </div>
                 <div class="flex sec-3--2">
                     <div class="sec-3-b-1">
@@ -681,6 +741,6 @@
         var logger=function(){var o=null,n={enableLogger:function(){null!=o&&(window.console.log=o)},disableLogger:function(){o=console.log,window.console.log=function(){}}};return n}();$(document).ready(function(){logger.disableLogger()});
     </script> -->
     <script type="module" src="https://unpkg.com/ionicons@5.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
